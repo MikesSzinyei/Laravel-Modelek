@@ -12,4 +12,20 @@ class DrinkController extends Controller {
 
         return $drinks;
     }
+
+    public function getOneDrink($drinkName) {
+        $drink = Drink::where("drink", $drinkName) ->first();
+
+        return $drink;
+    }
+
+    public function updateDrink(Request $request) {
+
+        $drink = Drink::find($id);
+        $drink -> drink = $request["drink"];
+        $drink -> amount = $request["amount"];
+
+        $drink -> save();
+        return "ok";
+    }
 }

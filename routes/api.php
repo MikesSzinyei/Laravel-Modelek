@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Https\Controllers\DrinkController;
+use App\Http\Controllers\DrinkController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,4 +18,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get("\drinks", [DrinkController::class, "getDrinks"]);
+Route::get("/drinks", [DrinkController::class, "getDrinks"]);
+Route::get("/onedrink/{drinkName}",[DrinkController::class,"getOneDrink"]);
+Route::get("/modifydrink/{amount}", [DrinkController::class, "updateDrink"]);
