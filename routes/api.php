@@ -20,4 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get("/drinks", [DrinkController::class, "getDrinks"]);
 Route::get("/onedrink/{drinkName}",[DrinkController::class,"getOneDrink"]);
-Route::get("/modifydrink/{amount}", [DrinkController::class, "updateDrink"]);
+Route::get("/modifydrink", [DrinkController::class, "updateDrink"]);
+Route::delete("/deletedrink", [DrinkController::class, "deleteDrink"]);
+Route::get("/drinkswall", [DrinkController::class, "getDrinksWithAll"]);

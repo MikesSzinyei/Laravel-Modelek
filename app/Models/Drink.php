@@ -15,4 +15,16 @@ class Drink extends Model
         "type_id",
         "package_id"
     ];
+
+    public function type() {
+
+        return $this->belongsTo(Type::class);
+    }
+
+    public function package() {
+
+        return $this->belongsTo(Package::class);
+    }
+
+
 }

@@ -13,4 +13,8 @@ class Package extends Model
     ];
 
     public $timestamps = false;
+    public function drink() {
+
+        return $this->hasMany(Drink::class);
+    }
 }
